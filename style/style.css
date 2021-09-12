@@ -1,0 +1,361 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  background-color: #f0f2f5;
+  overflow-x: hidden;
+}
+
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  user-select: none;
+  outline: none;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+.container {
+  height: 100vh;
+  width: 100vw;
+  padding: 8px 5px;
+}
+.container .main-content {
+  display: grid;
+  grid-template-columns: 226px 1fr 77px;
+  column-gap: 8%;
+  height: 100%;
+  width: 100%;
+}
+
+.posts-wrapper,
+.nav-wrapper {
+  border: 3px solid #fff;
+  background-color: #fff;
+}
+
+.chats-wrapper {
+  height: 70%;
+  width: 226px;
+}
+
+.nav-wrapper {
+  height: 38%;
+  margin-top: 160px;
+}
+
+.posts-wrapper {
+  height: 100%;
+}
+
+.left .logo-wrapper {
+  height: 114px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.left .logo-wrapper .logo-img {
+  cursor: pointer;
+  position: fixed;
+}
+.left .chats-wrapper {
+  position: fixed;
+  border-radius: 12px;
+  display: grid;
+  grid-template-rows: 1fr 27fr 1fr;
+}
+.left .chats-wrapper .chats-top-scroller,
+.left .chats-wrapper .chats-bottom-scroller {
+  display: flex;
+  justify-content: center;
+  background-color: #34182b;
+  cursor: pointer;
+}
+.left .chats-wrapper .chats-top-scroller:hover .scroll-triangle,
+.left .chats-wrapper .chats-bottom-scroller:hover .scroll-triangle {
+  transition: 80ms linear;
+  border-bottom-color: #34182b;
+}
+.left .chats-wrapper .chats-top-scroller .top-scroll,
+.left .chats-wrapper .chats-bottom-scroller .top-scroll {
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-bottom: 15px solid white;
+  margin: auto;
+}
+.left .chats-wrapper .chats-top-scroller .bottom-scroll,
+.left .chats-wrapper .chats-bottom-scroller .bottom-scroll {
+  width: 0;
+  height: 0;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-bottom: 15px solid white;
+  transform: rotate(180deg);
+  margin: auto;
+}
+.left .chats-wrapper .chats-top-scroller {
+  border-bottom: 3px solid #fff;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  text-align: center;
+}
+.left .chats-wrapper .chats-bottom-scroller {
+  text-align: center;
+  border-top: 3px solid #fff;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+.left .chats-wrapper .chat-list {
+  background-color: #fffcfe;
+  display: grid;
+  grid-template-rows: repeat(7, 1fr);
+  width: 100%;
+}
+.left .chats-wrapper .chat-list .chat-item {
+  border-bottom: 2px solid #fff;
+  cursor: pointer;
+}
+.left .chats-wrapper .chat-list .chat-item:last-child {
+  border-bottom: none;
+}
+.left .chats-wrapper .chat-list .chat-item .chat-item-info {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: 1fr 1fr;
+}
+.left .chats-wrapper .chat-list .chat-item .chat-item-info .chat-avatar-wrapper {
+  grid-row-start: 1;
+  grid-row-end: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.left .chats-wrapper .chat-list .chat-item .chat-item-info .chat-avatar-wrapper .chat-user-avatar {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+}
+.left .chats-wrapper .chat-list .chat-item .chat-item-info .chat-user-nick {
+  text-align: center;
+  font-size: 15pt;
+  padding: 0 3px;
+  margin-top: auto;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.left .chats-wrapper .chat-list .chat-item .chat-item-info .chat-last-msg {
+  text-align: left;
+  padding-left: 23px;
+  margin: auto;
+  font-size: 12pt;
+  border-top: 1px solid #000;
+  width: 100%;
+}
+.left .chats-wrapper .chat-list .chat-item:hover {
+  transition: 150ms all;
+  background-color: #34182b;
+}
+.left .chats-wrapper .chat-list .chat-item:hover .chat-user-nick {
+  color: #fff;
+  font-weight: 800;
+}
+.left .chats-wrapper .chat-list .chat-item:hover .chat-last-msg {
+  color: #fff;
+  border-top-color: #daf7a6;
+}
+
+.right .nav-wrapper {
+  position: fixed;
+  border-radius: 12px 0 0 12px;
+}
+.right .nav-wrapper .nav-list {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-rows: repeat(6, 1fr);
+}
+.right .nav-wrapper .nav-list .nav-item {
+  border-bottom: 2px solid #fff;
+  background-color: #fffcfe;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.right .nav-wrapper .nav-list .nav-item:last-child {
+  border-bottom: none;
+  border-bottom-left-radius: 9px;
+}
+.right .nav-wrapper .nav-list .nav-item:first-child {
+  border-top-left-radius: 9px;
+}
+.right .nav-wrapper .nav-list .nav-item .nav-item-img {
+  width: 70%;
+  height: 70%;
+}
+.right .nav-wrapper .nav-list .nav-item:hover {
+  transition: 150ms all;
+  background-color: #cbb9a8;
+}
+
+.middle {
+  margin-bottom: 8px;
+  margin-right: 100px;
+}
+.middle .posts-wrapper {
+  border-radius: 7px;
+  height: 100%;
+  padding: 8px 0;
+}
+.middle .posts-wrapper .posts-list {
+  width: 100%;
+  height: 100%;
+  margin-top: 10px;
+  overflow-y: auto;
+}
+.middle .posts-wrapper .posts-list .post-item {
+  display: grid;
+  grid-template-columns: 1fr 9fr 4fr;
+  min-height: 200px;
+  column-gap: 8px;
+  margin: 0 20px;
+  border-bottom: 4px solid #34182b;
+}
+.middle .posts-wrapper .posts-list .post-item:first-child {
+  border-top: 4px solid #34182b;
+}
+.middle .posts-wrapper .posts-list .post-item > div {
+  border: 4px solid #34182b;
+  border-bottom: none;
+  border-top: none;
+}
+.middle .posts-wrapper .posts-list .post-item .actions-wrapper {
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.middle .posts-wrapper .posts-list .post-item .actions-wrapper .action-btns,
+.middle .posts-wrapper .posts-list .post-item .actions-wrapper .post-stat {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.middle .posts-wrapper .posts-list .post-item .actions-wrapper .action-btns {
+  height: 350px;
+  padding: 8px 0;
+  margin-top: 10px;
+}
+.middle .posts-wrapper .posts-list .post-item .actions-wrapper .action-btns .action-btn-circle {
+  border-radius: 50%;
+  height: 70px;
+  width: 70px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.middle .posts-wrapper .posts-list .post-item .actions-wrapper .action-btns .action-btn-circle img {
+  width: 70%;
+}
+.middle .posts-wrapper .posts-list .post-item .actions-wrapper .action-btns .action-btn-circle:hover {
+  cursor: pointer;
+}
+.middle .posts-wrapper .posts-list .post-item .actions-wrapper .action-btns .action-btn-circle:hover img {
+  width: 77%;
+  transition: 70ms all;
+}
+.middle .posts-wrapper .posts-list .post-item .actions-wrapper .post-stat {
+  height: 200px;
+  width: 100%;
+}
+.middle .posts-wrapper .posts-list .post-item .actions-wrapper .post-stat > .post-stat-item {
+  padding: 5px 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  border-top: 2px solid #34182b;
+}
+.middle .posts-wrapper .posts-list .post-item .actions-wrapper .post-stat > .post-stat-item img {
+  width: 42px;
+}
+.middle .posts-wrapper .posts-list .post-item .actions-wrapper .post-stat > .post-stat-item .post-stat-count {
+  font-size: 18pt;
+}
+.middle .posts-wrapper .posts-list .post-item .post-main-content {
+  position: relative;
+}
+.middle .posts-wrapper .posts-list .post-item .post-main-content .image-post-content {
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: -webkit-zoom-in;
+}
+.middle .posts-wrapper .posts-list .post-item .post-main-content .image-post-content img {
+  min-width: 40%;
+  max-height: 70vh;
+}
+.middle .posts-wrapper .posts-list .post-item .post-main-content .text-post-content {
+  padding: 7px;
+  font-size: 15pt;
+  text-indent: 22px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/*# sourceMappingURL=style.css.map */
